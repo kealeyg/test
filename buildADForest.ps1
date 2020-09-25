@@ -1,5 +1,6 @@
 $domain = "gktest"
 $SecurePassword = ConvertTo-SecureString 'Canada1!' -asplaintext -force 
+$TextInfo = (Get-Culture).TextInfo
 
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
 
@@ -18,10 +19,11 @@ foreach($user in $users){
 	$firstName = $user.firstName
 	$lastName = $user.lastName
 	$name = "${firstName} ${lastName}"
+	$name = $TextInfo.ToTitleCase($name.ToLower())
 	$samName = $firstName[0] + "${lastName}"
 	$UPName = "${samName}@${domain}.local"
 	$path = "CN=Users,DC=${domain},DC=local"
-	New-ADUSER -Name $name -GivenName $firstName -Surname $lastName -SamAccountName $samName -userprincipalname $UPName -Path $path -AccountPassword $SecurePassword -Enable $true
+	New-ADUSER -Name $name -GivenName $TextInfo.ToTitleCase($firstName) -Surname $TextInfo.ToTitleCase($lastName) -SamAccountName $samName -userprincipalname $UPName -Path $path -AccountPassword $SecurePassword -Enable $true
 }
 
 exit 0
