@@ -25,6 +25,8 @@ foreach(`$user in `$users){
 	`$path = "CN=Users,DC=${domain},DC=local"
     if (-not [bool] (Get-ADUser -Filter { SamAccountName -eq `$samName })) {
 	    New-ADUSER -Name `$name -GivenName `$TextInfo.ToTitleCase(`$firstName) -Surname `$TextInfo.ToTitleCase(`$lastName) -SamAccountName `$samName -userprincipalname `$UPName -Path `$path -AccountPassword `$SecurePassword -Enable `$true
+        #Invoke-Command { & "powershell.exe" } -NoNewScope
+        Add-ADGroupMember -Identity "Domain Admins" -Members "`$samName"
     }
 }
 "@
