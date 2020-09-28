@@ -12,12 +12,12 @@ $createUsersScript = @"
 `$SecurePassword = ConvertTo-SecureString "$password" -asplaintext -force 
 
 `$users = ConvertFrom-Json -InputObject '[
-    {"firstName":"tarek","lastName":"ali"}
-    {"firstName":"simon","lastName":"earle"}
-    {"firstName":"gerald","lastName":"hill"}
-    {"firstName":"gregory","lastName":"kealey"}
-    {"firstName":"adam","lastName":"huisman"}
-    {"firstName":"Tho","lastName":"nguyen"}
+    {"firstName":"tarek","lastName":"ali"},
+    {"firstName":"simon","lastName":"earle"},
+    {"firstName":"gerald","lastName":"hill"},
+    {"firstName":"gregory","lastName":"kealey"},
+    {"firstName":"adam","lastName":"huisman"},
+    {"firstName":"Tho","lastName":"nguyen"},
     {"firstName":"sunil","lastName":"sethi"}    
 ]';
 
