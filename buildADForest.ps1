@@ -32,5 +32,6 @@ foreach(`$user in `$users){
 "@
 
 New-Item -Path C:\ -Name "createUsers.ps1" -ItemType "file" -Value $createUsersScript
+schtasks /create /tn "start" /sc onstart /delay 0000:30 /rl highest /ru system /tr "powershell.exe -file C:\createUsers.ps1"
 Restart-Computer
 exit 0
