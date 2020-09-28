@@ -1,5 +1,5 @@
-$domain = "gktest"
-$password = 'Canada1!'
+$domain = $args[0]
+$password = $args[1]
 $SecurePassword = ConvertTo-SecureString $password -asplaintext -force 
 $TextInfo = (Get-Culture).TextInfo
 
@@ -12,7 +12,13 @@ $createUsersScript = @"
 `$SecurePassword = ConvertTo-SecureString "$password" -asplaintext -force 
 
 `$users = ConvertFrom-Json -InputObject '[
-	{"firstName":"greg","lastName":"kealey"}
+    {"firstName":"tarek","lastName":"ali"}
+    {"firstName":"simon","lastName":"earle"}
+    {"firstName":"gerald","lastName":"hill"}
+    {"firstName":"gregory","lastName":"kealey"}
+    {"firstName":"adam","lastName":"huisman"}
+    {"firstName":"Tho","lastName":"nguyen"}
+    {"firstName":"sunil","lastName":"sethi"}    
 ]';
 
 foreach(`$user in `$users){
@@ -32,6 +38,5 @@ foreach(`$user in `$users){
 "@
 
 New-Item -Path C:\ -Name "createUsers.ps1" -ItemType "file" -Value $createUsersScript
-schtasks /create /tn "start" /sc onstart /delay 0000:30 /rl highest /ru system /tr "powershell.exe -file C:\createUsers.ps1"
 Restart-Computer
 exit 0
