@@ -38,5 +38,5 @@ foreach(`$user in `$users){
 "@
 
 New-Item -Path C:\ -Name "createUsers.ps1" -ItemType "file" -Value $createUsersScript
-Restart-Computer
+Restart-Computer -Force
 exit 0
