@@ -11,7 +11,7 @@ $script = @"
 Add-Computer -DomainName ${domain}.local -Credential `$credential -Force
 
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
-Install-ADDSDomainController -InstallDns -DomainName ${domain} -NoRebootOnCompletion -Credential `$credential -Force -SafeModeAdministratorPassword $SecurePassword
+Install-ADDSDomainController -InstallDns -DomainName ${domain} -NoRebootOnCompletion -Credential `$credential -Force -SafeModeAdministratorPassword `$SecurePassword
 Add-DnsServerForwarder -IPAddress 168.63.129.16 -PassThru
 "@
 
