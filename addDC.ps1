@@ -7,11 +7,11 @@ $TextInfo = (Get-Culture).TextInfo
 $script = @"
 `$user = "${domain}.local\${user}"
 `$SecurePassword = ConvertTo-SecureString "$password" -asplaintext -force 
-`$credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $user, `$SecurePassword
+`$credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList `$user, `$SecurePassword
 Add-Computer -DomainName ${domain}.local -Credential `$credential -Force
 
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
-Install-ADDSDomainController -InstallDns -DomainName ${domain}.local -NoRebootOnCompletion -Force -SafeModeAdministratorPassword `$SecurePassword
+Install-ADDSDomainController -InstallDns -DomainName ${domain} -NoRebootOnCompletion -Force `$credential
 Add-DnsServerForwarder -IPAddress 168.63.129.16 -PassThru
 "@
 
