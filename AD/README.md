@@ -1,5 +1,5 @@
 <h1>Summary</h1>
-The purpose of this repo is to document the code and steps needed to deploy a simple AD (Active Directory) solution in Azure Cloud. The Terraform scripts will deploy two virtual machines (VM), and the PowerShell will configure the VMs with AD functionality post deployment. Given how important timing is for the deployment, the scripts were designed to maximize control during the procedure. Please follow the deployment steps below in order to ensure the AD servers are deployed correctly.
+The purpose of this repo is to document the code and steps needed to deploy a simple AD (Active Directory) solution in Azure Cloud. The Terraform scripts will deploy two virtual machines (VM), and the PowerShell scripts will configure the VMs with AD functionality post deployment. Given how important timing is for the deployment, the scripts were designed to maximize control during the procedure. Please follow the deployment steps below in order to ensure the AD servers are deployed correctly.
 <h1>Deployment Steps</h1>
 <ul>
 <li>Adjust Terraform variables</li>
