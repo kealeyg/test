@@ -10,15 +10,15 @@ The purpose of this repo is to document the code and steps needed to deploy a si
 <li>Login into Azure Portal and Update DNS</li>
 </ul>
 <h1>Appendix</h1>
-Figure 1 (Terraform variables)
+<b>Figure 1 (Terraform variables)</b>
 <img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
-Figure 2  (Terraform apply)
+<b>Figure 2  (Terraform apply)</b>
 <img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
-Figure 3 (createUser.ps1)
+<b>Figure 3 (createUser.ps1)</b>
 <img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
-Figure 4 (DNS)
+<b>Figure 4 (DNS)</b>
 <img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
-Figure 5 (buildDC.ps1)
+<b>Figure 5 (buildDC.ps1)</b>
 <img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
-Figure 5 (DNS)
+<b>Figure 5 (DNS)</b>
 <img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
