@@ -11,8 +11,14 @@ The purpose of this repo is to document the code and steps needed to deploy a si
 </ul>
 <h1>Appendix</h1>
 Figure 1 (Terraform variables)
+<img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
 Figure 2  (Terraform apply)
+<img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
 Figure 3 (createUser.ps1)
+<img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
 Figure 4 (DNS)
+<img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
 Figure 5 (buildDC.ps1)
+<img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
 Figure 5 (DNS)
+<img src="https://dummyimage.com/600x300/c4c4c4/fff"/>
