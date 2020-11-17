@@ -1,11 +1,11 @@
-<table style="width: 100%; table-layout: fixed; overflow-wrap: break-word;">
+<table style="display:table;">
 	<tr>
 		<td colspan=3>Management group and subscription</td>
 	</tr>
 	<tr>
-		<td>Name</td>
-		<td>Status</td>
-		<td>Reference</td>
+		<td>NAME</td>
+		<td>STATUS</td>
+		<td>REFERENCE</td>
 	</tr>
 	<tr>
 		<td>Deny-PublicEndpoints</td>
@@ -24,9 +24,14 @@
 	</tr>
 </table>
 
-<table width=100%>
+<table style="display:table;">
 	<tr>
 		<td colspan=3>Sandbox Governance Guidance</td>
+	</tr>
+	<tr>
+		<td>NAME</td>
+		<td>STATUS</td>
+		<td>REFERENCE</td>
 	</tr>
 	<tr>
 		<td>Deny-VNET-Peering-Cross-Subscription<td>
