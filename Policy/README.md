@@ -34,7 +34,7 @@
 		<td>REFERENCE</td>
 	</tr>
 	<tr>
-		<td>Deny-VNET-Peering<td>
+		<td>Deny-VNET-Peering-Cross-Subscription</td>
 		<td>Pending</td>
 		<td></td>
 	</tr>	
