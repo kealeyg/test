@@ -1,4 +1,4 @@
-<table style="display:table;">
+<table style="display:block;">
 	<tr>
 		<td colspan=3>Management group and subscription</td>
 	</tr>
@@ -24,7 +24,7 @@
 	</tr>
 </table>
 
-<table style="display:table;">
+<table style="display:block;">
 	<tr>
 		<td colspan=3>Sandbox Governance Guidance</td>
 	</tr>
