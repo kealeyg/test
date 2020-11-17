@@ -1,3 +1,9 @@
+(setq markdown-xhtml-header-content
+      "<style type='text/css'>
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>")
+
 <table style="display:block;">
 	<tr>
 		<td colspan=3>Management group and subscription</td>
