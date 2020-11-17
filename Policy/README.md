@@ -1,8 +1,4 @@
-<style type='text/css'>
-
-</style>
-
-<table style="display:block;">
+<table>
 	<tr>
 		<td colspan=3>Management group and subscription</td>
 	</tr>
@@ -38,7 +34,7 @@
 		<td>REFERENCE</td>
 	</tr>
 	<tr>
-		<td>Deny-VNET-Peering-Cross-Subscription<td>
+		<td>Deny-VNET-Peering<td>
 		<td>Pending</td>
 		<td></td>
 	</tr>	
