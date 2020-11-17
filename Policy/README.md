@@ -1,75 +1,62 @@
 <table>
 	<tr>
-		<td colspan=3>Management group and subscription</td>
+		<td colspan=2>Management group and subscription</td>
 	</tr>
 	<tr>
 		<td>NAME</td>
 		<td>STATUS</td>
-		<td>REFERENCE</td>
 	</tr>
 	<tr>
 		<td>Deny-PublicEndpoints</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deploy-VM-Backup</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deploy-Vnet</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 </table>
 
 <table style="display:block;">
 	<tr>
-		<td colspan=3>Sandbox Governance Guidance</td>
+		<td colspan=2>Sandbox Governance Guidance</td>
 	</tr>
 	<tr>
 		<td>NAME</td>
 		<td>STATUS</td>
-		<td>REFERENCE</td>
 	</tr>
 	<tr>
 		<td>Deny-VNET-Peering-Cross-Subscription</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>	
 		<td>Denied-Resources</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deploy-Budget-Sandbox</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deny-Subnet-Without-Nsg</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deny-Subnet-Without-UDR</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deny-ERPeering.parameters</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deny-PublicIP</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 	<tr>
 		<td>Deny-IP-Forwarding</td>
 		<td>Pending</td>
-		<td></td>
 	</tr>
 </table>
