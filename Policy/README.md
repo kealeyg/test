@@ -1,7 +1,4 @@
-<style>
-	color: rgb(255,0,0) !important;
-</style>
-<table width=100%>
+<table style="width: 100%; table-layout: fixed; overflow-wrap: break-word;">
 	<tr>
 		<td colspan=3>Management group and subscription</td>
 	</tr>
