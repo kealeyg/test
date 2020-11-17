@@ -1,8 +1,6 @@
-(setq markdown-xhtml-header-content
-      "<style type='text/css'>
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-</style>")
+<style type='text/css'>
+
+</style>
 
 <table style="display:block;">
 	<tr>
