@@ -1,3 +1,6 @@
+<style>
+	color: rgb(255,0,0) !important;
+</style>
 <table width=100%>
 	<tr>
 		<td colspan=3>Management group and subscription</td>
