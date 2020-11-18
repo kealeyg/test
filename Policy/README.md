@@ -8,15 +8,15 @@
 	</tr>
 	<tr>
 		<td>Deny-PublicEndpoints</td>
-		<td>Pending</td>
+		<td>-</td>
 	</tr>
 	<tr>
 		<td>Deploy-VM-Backup</td>
-		<td>Pending</td>
+		<td>-</td>
 	</tr>
 	<tr>
 		<td>Deploy-Vnet</td>
-		<td>Pending</td>
+		<td>-</td>
 	</tr>
 </table>
 
@@ -30,14 +30,14 @@
 	</tr>
 	<tr>
 		<td>Deny-VNET-Peering-Cross-Subscription</td>
-		<td>Pending</td>
+		<td>-</td>
 	</tr>	
 		<td>Denied-Resources</td>
-		<td>Pending</td>
+		<td>-</td>
 	</tr>
 	<tr>
 		<td>Deploy-Budget-Sandbox</td>
-		<td>Pending</td>
+		<td>-</td>
 	</tr>
 	<tr>
 		<td>Deny-Subnet-Without-Nsg</td>
@@ -53,7 +53,7 @@
 	</tr>
 	<tr>
 		<td>Deny-PublicIP</td>
-		<td>Pending</td>
+		<td>Done</td>
 	</tr>
 	<tr>
 		<td>Deny-IP-Forwarding</td>
