@@ -45,7 +45,7 @@
 	</tr>
 	<tr>
 		<td>Deny-Subnet-Without-UDR</td>
-		<td>Pending</td>
+		<td>Done</td>
 	</tr>
 	<tr>
 		<td>Deny-ERPeering.parameters</td>
