@@ -49,7 +49,7 @@
 	</tr>
 	<tr>
 		<td>Deny-ERPeering.parameters</td>
-		<td>Pending</td>
+		<td>Done</td>
 	</tr>
 	<tr>
 		<td>Deny-PublicIP</td>
@@ -57,6 +57,6 @@
 	</tr>
 	<tr>
 		<td>Deny-IP-Forwarding</td>
-		<td>Pending</td>
+		<td>Done</td>
 	</tr>
 </table>
