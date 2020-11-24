@@ -8,7 +8,7 @@
 	</tr>
 	<tr>
 		<td>Deny-PublicEndpoints</td>
-		<td>-</td>
+		<td>Done</td>
 	</tr>
 	<tr>
 		<td>Deploy-VM-Backup</td>
