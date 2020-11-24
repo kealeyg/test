@@ -30,7 +30,7 @@
 	</tr>
 	<tr>
 		<td>Deny-VNET-Peering-Cross-Subscription</td>
-		<td>-</td>
+		<td>Pending</td>
 	</tr>	
 		<td>Denied-Resources</td>
 		<td>-</td>
