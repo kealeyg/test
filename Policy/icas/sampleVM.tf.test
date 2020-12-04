@@ -1,0 +1,122 @@
+# Global Variables
+#-----------------------------------------------------------------------------------------#
+variable "username" {
+    default = "admkealeyg"
+}
+variable "password" {
+    default = "Canada1!"
+}
+variable "tags" {
+    default = {
+        env="sandbox"
+        costcenter="816231"
+        classification="ull"
+        owner="jacqueline.morcos@canada.ca"
+        contact="Gregory.Kealey@canada.ca"
+        deployment="azure-lz-iac-2020-10-26"
+    }
+}
+
+# Local Variables
+#-----------------------------------------------------------------------------------------#
+variable "rg-system" {
+  default = "SSC-ICAS-Infra-Network-rg"
+}
+variable "rg-network" {
+  default = "SSC-ICAS-Infra-Network-rg"
+}
+variable "vnet" {
+  default = "ICAS-LAB-vnet"
+}
+variable "snet" {
+  default = "ICAS-LAB-ProdDATA"
+}
+
+# Data
+#-----------------------------------------------------------------------------------------#
+# Data - RG
+#------------------------------------------------------------------#
+data "azurerm_resource_group" "rg-system" {
+  name     = var.rg-system
+  provider = azurerm.ScDc-GCPASS-ICAS-Dev
+}
+data "azurerm_resource_group" "rg-network" {
+  name     = var.rg-network
+  provider = azurerm.ScDc-GCPASS-ICAS-Dev
+}
+
+# Data - vNet
+#------------------------------------------------------------------#
+data "azurerm_virtual_network" "vnet" {
+  name                = var.vnet
+  provider            = azurerm.ScDc-GCPASS-ICAS-Dev
+  resource_group_name = data.azurerm_resource_group.rg-network.name
+}
+
+# Data - sNet
+#------------------------------------------------------------------#
+data "azurerm_subnet" "snet" {
+  name                 = var.snet
+  provider             = azurerm.ScDc-GCPASS-ICAS-Dev
+  virtual_network_name = data.azurerm_virtual_network.vnet.name
+  resource_group_name  = data.azurerm_resource_group.rg-network.name
+}
+
+# VM Windows - ICAS - VM
+#-----------------------------------------------------------------------------------------#
+resource "azurerm_windows_virtual_machine" "winVM" {
+    name = join("-", ["ScDcSWD", "ICAS"])
+    provider = azurerm.ScDc-GCPASS-ICAS-Dev
+    location = "canadaCentral"
+    resource_group_name = data.azurerm_resource_group.rg-system.name
+    computer_name  = join("-", ["ScDcSWD", "ICAS"])
+    admin_username = var.username
+    admin_password = var.password
+    network_interface_ids = [azurerm_network_interface.nic1.id]
+    size = "Standard_DS2_v2"
+    enable_automatic_updates = "true"
+    provision_vm_agent = "true"
+    allow_extension_operations = "true"
+    source_image_reference  {
+        publisher = "MicrosoftWindowsServer"
+        offer = "WindowsServer"
+        sku = "2016-Datacenter"
+        version = "latest"
+    }
+    os_disk {
+        name = join("-", ["ScDcSWD", "ICAS", "OSdisk1"])
+        caching = "ReadWrite"
+        storage_account_type = "Standard_LRS"
+    }
+    tags = var.tags
+}
+
+# VM Windows - ICAS - NIC
+#-----------------------------------------------------------------------------------------#
+resource "azurerm_network_interface" "nic1" {
+  name                          = join("-", ["ScDcSWD", "ICAS", "nic1"])
+  provider                      = azurerm.ScDc-GCPASS-ICAS-Dev
+  location                      = "canadaCentral"
+  resource_group_name           = data.azurerm_resource_group.rg-system.name
+  enable_ip_forwarding          = "false"
+  enable_accelerated_networking = "false"
+  ip_configuration {
+    name = join("-", ["ScDcSWD", "ICAS", "nic1-config"])
+    subnet_id = data.azurerm_subnet.snet.id
+    private_ip_address = cidrhost(data.azurerm_subnet.snet.address_prefix, 16)
+    private_ip_address_allocation = "static"
+    public_ip_address_id = azurerm_public_ip.pip.id
+    primary = "true"
+  }
+  tags = var.tags
+}
+
+# VM Windows - ICAS - PIP
+#-----------------------------------------------------------------------------------------#
+resource "azurerm_public_ip" "pip" {
+  name = join("-", ["ScDcSWD", "ICAS", "pip1"])
+  location = "canadaCentral"
+  resource_group_name = data.azurerm_resource_group.rg-system.name
+  allocation_method = "Static"
+  provider = azurerm.ScDc-GCPASS-ICAS-Dev
+}
